@@ -1,11 +1,24 @@
 import requests
 import os
 
-def test():
-    url = 'http://m.111.com.cn/maps/index.html?pageId=34&type=release'
+def testver():
+    url = 'http://192.168.1.101:5000/101'
     r = requests.get(url)
-    with open("demo3.zip", "wb") as code:
-        code.write(r.content)
+    print(r.content)
+    if 1:
+        test()
 
-test()
+def test():
+    url = 'http://127.0.0.1:5000/100'
+    r = requests.get(url)
+    with open("%sdemo3.txt" % 'test', "wb") as code:
+        code.write(r.content)
+        tests()
+
+def tests():
+    if not os.path.exists(r'testdemo3.txt'):
+        print('update success!')
+
+testver()
+# test()
 print (os.getcwd())
